@@ -7,6 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         openmpi-bin \
         vim-nox \
         cmake \
+        autoconf \
         wget \
         curl \
         ipython \
