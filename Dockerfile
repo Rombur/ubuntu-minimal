@@ -4,6 +4,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         gcc \
         gfortran \
         build-essential \
+        openmpi-bin \
         vim-nox \
         cmake \
         wget \
