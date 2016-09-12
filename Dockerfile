@@ -23,8 +23,6 @@ RUN bash -c "source ~/.bashrc"
 
 # Use spack to install the latest version of the libraries
 RUN cd /home/docker && git clone https://github.com/llnl/spack.git
-ENV PATH=/home/spack/bin:$PATH
-RUN spack install gcc ~binutils
-RUN spack load gcc
+ENV PATH=/home/docker/spack/bin:$PATH
 RUN spack install vim +huge +python
 RUN spack install openmpi
