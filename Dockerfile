@@ -2,6 +2,7 @@ FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         gcc \
+        gfortran \
         build-essential \
         cmake \
         autoconf \
@@ -19,6 +20,7 @@ USER docker
 WORKDIR /home/docker
 
 RUN echo 'module() { eval `/usr/bin/modulecmd bash $*`; }' >> ~/.bashrc
+RUN echo '. /home/docker/spack/share/spack/setup-env.sh' >> ~/.bashrc
 RUN bash -c "source ~/.bashrc"
 
 # Use spack to install the latest version of the libraries
